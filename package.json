@@ -1,0 +1,61 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "gulp serve",
+    "pretest": "jshint ."
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "loopback": "2.27.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^2.1.0",
+    "loopback-datasource-juggler": "^2.39.0",
+    "serve-favicon": "^2.0.1",
+    "jade": "latest",
+    "gulp": "latest",
+    "gulp-inject": "latest",
+    "gulp-util": "latest",
+    "gulp-watch": "latest",
+    "gulp-exec": "latest",
+    "gulp-jade": "1.1.0",
+    "babel": "latest",
+    "webpack": "latest",
+    "webpack-stream": "latest",
+    "webpack-dev-server": "latest",
+    "loopback-webpack-plugin": "latest",
+    "webpack-dev-middleware": "latest",
+    "webpack-hot-middleware": "latest",
+    "node-sass": "latest",
+    "style-loader": "latest",
+    "css-loader": "latest",
+    "sass-loader": "latest",
+    "babel-loader": "latest",
+    "babel-core": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-react": "latest",
+    "babel-polyfill": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router": "latest",
+    "react-redux": "^4.2.1",
+    "redux": "^3.2.1",
+    "redux-logger": "^2.4.0",
+    "redux-thunk": "^1.0.3",
+    "isomorphic-fetch": "^2.1.1",
+    "jquery": "latest",
+    "lodash": "latest",
+    "foundation-sites": "latest",
+    "browser-sync": "latest"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.6"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "description": "blog"
+}

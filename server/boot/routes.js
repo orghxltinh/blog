@@ -2,8 +2,10 @@
 
 module.exports = (app) => {
 
-  let User = app.models.user
-  let router = app.loopback.Router()
+  let User = app.models.user;
+  let blog = app.models.blog;
+  let article = app.models.article;
+  let router = app.loopback.Router();
   // match everything except string 'api|explorer' to make sure api route work as it is
   // app.get(/^(?!.*(api|explorer|login))/, (req, res) => {
   //   return res.render("home")
@@ -17,15 +19,31 @@ module.exports = (app) => {
     .get( "/", ( req, res) => {
       return res.render("home")
     })
-    // .get( /^\/(admin|blog)*/, ( req, res) => {
-    //   return res.render("home")
-    // })
+    .get('/api/blogs/latest', ( req, res) => {
+      blog.find({
+        order: 'updatedDate DESC',
+        limit: 5
+      }, (err, data) => {
+          if(err){ return res.status(500); }
+          return res.json(data);
+      });
+    })
     .get( /^\/(admin|blog)\/*/, ( req, res) => {
       return res.render("home")
     })
     // .get( /^\/blog*/, ( req, res) => {
     //   return res.render("home")
     // })
+
+    .get( "/test", ( req, res) => {
+      article.findOne(
+        {
+          where: { slug: "article-1" },
+          include: "blog"
+        }, ( err, article ) => {
+          return res.json(article)
+      });
+    })
     .get( "/assets/*", (req, res) => {
       return res.status(404).send("error")
     })

@@ -10,6 +10,9 @@
       "type": "string",
       "required": true
     },
+    "description": {
+      "type": "string"
+    },
     "content": {
       "type": "string",
       "required": true
@@ -25,7 +28,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "article": {
+      "type": "belongsTo",
+      "model": "article",
+      "foreignKey": ""
+    }
+  },
   "acls": [
     {
       "accessType": "*",

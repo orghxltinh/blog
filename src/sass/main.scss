@@ -1,0 +1,6 @@
+@import "foundation/foundation.scss";
+
+@include foundation-everything(true);
+
+@import "app/global";
+@import "components/latest-news.scss";

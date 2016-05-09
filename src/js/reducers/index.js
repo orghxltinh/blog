@@ -1,14 +1,16 @@
-import blog from "./blog"
-import user from "./user"
-import article from "./article"
-import appConfig from "./app-config"
-import { combineReducers } from "redux"
+import post from './post';
+import user from './user';
+import category from './category';
+import appConfig from './app-config';
+import auth from './auth';
+import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  blog,
+  post,
   user,
-  article,
+  category,
+  auth,
   appConfig
-})
+});
 
-export default rootReducer
+export default rootReducer;

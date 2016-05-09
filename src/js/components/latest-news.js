@@ -4,25 +4,25 @@ import { connect } from 'react-redux';
 class LatestNew extends Component {
   constructor(props) {
     super(props);
-    this.props.dispatch(hxltinh.actions.blog._instance.getLatest());
+    this.props.dispatch(hxltinh.actions.post._instance.getLatest());
   }
   render() {
     const { isLoading, latest } = this.props;
-    let firstBlog = latest[0] || null;
+    let firstPost = latest[0] || null;
     return (
-      <section className='row latest-news'>
+      <section className='b-section row latest-news'>
       {
-        !isLoading && firstBlog ?
-          <div>
-            <article><h3>{ firstBlog.title } <small>3/6/2015</small></h3></article>
-            <main><p>{ firstBlog.content }</p></main>
+        !isLoading && firstPost ?
+          <article>
+            <header><h3>{ firstPost.title } <small>3/6/2015</small></h3></header>
+            <main><p>{ firstPost.content }</p></main>
             <div class="callout">
               <ul class="menu simple">
                 <li><a href="#">Author: Mike Mikers</a></li>
                 <li><a href="#">Comments: 3</a></li>
               </ul>
             </div>
-          </div>
+          </article>
 
         :
           <div>Loading</div>
@@ -35,9 +35,9 @@ class LatestNew extends Component {
 const mapStateToProps = (state) => {
 
   return {
-    isLoading: state.blog.get('isLoading'),
-    latest: state.blog.get('latest').toJS()
+    isLoading: state.post.get('isLoading'),
+    latest: state.post.get('latest').toJS()
   };
-}
+};
 
 export default connect(mapStateToProps)(LatestNew);

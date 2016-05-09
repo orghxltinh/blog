@@ -9,18 +9,18 @@ module.exports = {
   debug: true,
   devtool: 'source-map',
   // entry: [
-  //   "babel-polyfill",
-  //   "./src/js/index.js"
+  //   'babel-polyfill',
+  //   './src/js/index.js'
   // ],
 
   entry: {
-    main: "./src/js/main.js",
+    main: './src/js/main.js',
     vendor: [
       'react',
       'react-dom',
-      "react-router",
-      "babel-polyfill",
-      "react-redux",
+      'react-router',
+      'babel-polyfill',
+      'react-redux',
       'redux'
     ]
   },
@@ -34,8 +34,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: { presets: [ 'react', 'es2015' ] } },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css!sass") },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
       { test: /.(gif|jpg|png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/, loader: 'url-loader' },
       { test: /\.tpl$/, loader: 'html' },
       { test: /\.jade$/, loader: 'jade' }
@@ -66,17 +66,17 @@ module.exports = {
       }
     }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery",
-      moment: "moment",
-      "window.moment": "moment"
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      moment: 'moment',
+      'window.moment': 'moment'
     }),
     new HtmlWebpackPlugin({
 
       hash: true,
       inject: 'body',
-      template: './template/index.html', // Load a custom template
+      template: './template/index.html' // Load a custom template
     })
   ],
 

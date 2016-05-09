@@ -1,37 +1,58 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 class MainBlogHeader extends Component{
+  constructor(props) {
+    super(props);
+    this.props.dispatch(hxltinh.actions.category._instance.fetchDataIfNeeded());
+  }
   render() {
+    const { isLoading, categories } = this.props;
     return (
-      <div id="main-blog-content">
+      !isLoading ?
+        categories.length > 0 ?
+          <header id='main-blog-header' className="b-header row">
+            <div className='b-top-bar' id='top-menu'>
+              <div className='top-bar-left'>
 
-        <div className="top-bar" id="example-menu">
-          <div className="top-bar-left">
-            <ul className="dropdown menu" data-dropdown-menu="8kbmai-dropdown-menu" role="menubar">
-              <li className="menu-text" role="menuitem">Tĩnh Hà Xuân Long blog</li>
-              <li role="menuitem" className="is-dropdown-submenu-parent is-down-arrow" aria-haspopup="true" aria-expanded="false" aria-label="One">
-                <a href="#" tabIndex="0">One</a>
-                <ul className="menu vertical submenu is-dropdown-submenu first-sub" data-submenu="" aria-hidden="true" role="menu">
-                  <li role="menuitem" className="is-submenu-item is-dropdown-submenu-item"><a href="#">One</a></li>
-                  <li role="menuitem" className="is-submenu-item is-dropdown-submenu-item"><a href="#">Two</a></li>
-                  <li role="menuitem" className="is-submenu-item is-dropdown-submenu-item"><a href="#">Three</a></li>
+                <ul className='dropdown menu' data-dropdown-menu='8kbmai-dropdown-menu' role='menubar'>
+                  <li id="logo" className='menu-text' role='menuitem'>
+                    <Link to="/">Tĩnh Hà Xuân Long blog</Link>
+                  </li>
+                  {
+                    categories.map(item => {
+                      return (
+                        <li key={item.id}>
+                          <Link to={`/category/${item.id}`}>{ item.title }</Link>
+                        </li>
+                      )
+                    })
+                  }
                 </ul>
-              </li>
-              <li role="menuitem"><a href="#">Two</a></li>
-              <li role="menuitem"><a href="#">Three</a></li>
-            </ul>
-          </div>
-          <div className="top-bar-right">
-            <ul className="menu">
-              <li><input type="search" placeholder="Search" /></li>
-              <li><button type="button" className="button">Search</button></li>
-            </ul>
-          </div>
-        </div>
+              </div>
+              <div className='top-bar-right'>
+                <ul className='menu'>
+                  <li><input type='search' placeholder='Search' /></li>
+                  <li><button type='button' className='button'>Search</button></li>
+                </ul>
+              </div>
+            </div>
 
-      </div>
+          </header>
+        :
+            <div>Loading</div>
+      :
+        <div>Loading</div>
     )
   }
 }
 
-export default MainBlogHeader
+const mapStateToProp = (state) => {
+  return {
+    isLoading: state.category.get('isLoading'),
+    categories: state.category.get('items').toJS()
+  }
+};
+
+export default connect(mapStateToProp)(MainBlogHeader);

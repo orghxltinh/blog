@@ -1,4 +1,4 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
 var environment = require('./environment.json');
@@ -15,15 +15,15 @@ module.exports = (port, envChar) => {
       main: [
         `webpack-dev-server/client?http://localhost:${port}`,
         'webpack/hot/only-dev-server',
-        "babel-polyfill",
-        "./src/js/main.js"
+        'babel-polyfill',
+        './src/js/main.js'
       ]
     },
 
     output: {
-      path: path.resolve(__dirname, "/client/js"),
-      filename: "bundle.js",
-      publicPath: "/assets/"
+      path: path.resolve(__dirname, '/client/js'),
+      filename: 'bundle.js',
+      publicPath: '/assets/'
     },
 
     resolve: {
@@ -36,8 +36,10 @@ module.exports = (port, envChar) => {
       loaders: [
         { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: { presets: [ 'react', 'es2015' ] } },
         { test: /\.html$/, loader: 'raw' },
-        { test: /\.scss$/, loaders: [ "style", "css?sourceMap", "sass?sourceMap" ]},
-        { test: /\.css$/, loaders: [ "style", "css?sourceMap" ] },
+        // { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') },
+        // { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
+        { test: /\.scss$/, loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]},
+        { test: /\.css$/, loaders: [ 'style', 'css?sourceMap' ] },
         { test: /.(gif|jpg|png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/, loader: 'url-loader' },
         { test: /\.tpl$/, loader: 'html' }
       ]
@@ -51,11 +53,9 @@ module.exports = (port, envChar) => {
         '__apiPort__': JSON.stringify( env.api.port )
       }),
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "window.jQuery": "jquery",
-        moment: "moment",
-        "window.moment": "moment"
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
       }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin()
@@ -72,7 +72,7 @@ module.exports = (port, envChar) => {
       timings: true,
       version: false
     }
-  }
-}
+  };
+};
 
 // module.exports = {

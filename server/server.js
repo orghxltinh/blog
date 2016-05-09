@@ -1,34 +1,31 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
-var path = require("path");
-var bodyParser = require("body-parser");
-
-var webpack = require("webpack");
-var webpackDevMiddleware = require("webpack-dev-middleware");
-var webpackHotMiddleware = require("webpack-hot-middleware");
-var LoopbackBootPlugin = require('loopback-webpack-plugin');
+var path = require('path');
+var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
-app.set( "view engine", "jade");
-app.set( "views", path.join( __dirname, "views" ) );
+app.set( 'view engine', 'jade');
+app.set( 'views', path.join( __dirname, 'views' ) );
 app.use( bodyParser.urlencoded( { extended : true } ) );
+console.log("loopback.token():", loopback.token);
 app.use( loopback.token() );
 
-console.log("environment:", process.env.NODE_ENV);
-// app.use( loopback.static( "./client" ) );
+
+console.log('environment:', process.env.NODE_ENV);
+// app.use( loopback.static( './client' ) );
 
 //
 // var config = {
-//   entry: ["jquery","lodash","babel-polyfill","./client/src/js/main.js"],
+//   entry: ['jquery','lodash','babel-polyfill','./client/src/js/main.js'],
 //   output: {
-//     //  path: "./client/dist/js",
-//     path: require("path").resolve("/client/dist/js"),
+//     //  path: './client/dist/js',
+//     path: require('path').resolve('/client/dist/js'),
 //     // path: __dirname + '/client/dist/js',
-//     filename: "bundle.js",
-//     publicPath: "/static/"
+//     filename: 'bundle.js',
+//     publicPath: '/static/'
 //   },
 //   debug: true,
-//   devtool: "source-map",
+//   devtool: 'source-map',
 //   module: {
 //     loaders: [
 //       {
@@ -54,8 +51,8 @@ console.log("environment:", process.env.NODE_ENV);
 // app.use(webpackDevMiddleware(compiler),{ noInfo: true, publicPath: config.output.publicPath });
 // app.use(webpackHotMiddleware(compiler));
 //
-// app.get("/", (req,res) => {
-//   res.render("home")
+// app.get('/', (req,res) => {
+//   res.render('home')
 // })
 
 app.start = function() {

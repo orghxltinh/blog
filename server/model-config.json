@@ -37,15 +37,15 @@
     "dataSource": "db",
     "public": true
   },
-  "blog": {
-    "dataSource": "db",
-    "public": true
-  },
   "user": {
     "dataSource": "db",
     "public": true
   },
-  "article": {
+  "Category": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Post": {
     "dataSource": "db",
     "public": true
   }

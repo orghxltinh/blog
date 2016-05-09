@@ -1,37 +1,21 @@
-import React, { Component } from "react"
+import { Component } from 'react';
 
 class RouteComponent extends Component {
   constructor(props) {
-    super(props)
-    console.log("=== route component:",props);
+    super(props);
     this.x = 4;
   }
-  printX() {
-    console.log('global x:', this.x);
-  }
 }
 
-window.baseClass = window.baseClass || {}
+window.baseClass = window.baseClass || {};
 
-window.baseClass.RouteComponent = RouteComponent
+window.baseClass.RouteComponent = RouteComponent;
+
+window.hxltinh = window.hxltinh || {};
+window.hxltinh.appConfig = window.hxltinh.appConfig || {};
+window.hxltinh.appConfig.AUTHENTICATION_KEY = 'Authorization';
+window.hxltinh.appConfig.AUTHENTICATION_USER_ID = 'userId';
+window.hxltinh.appConfig.AUTHENTICATION_USER_MAIL = 'email';
 
 
-window.appConfig = window.appConfig || {}
-window.appConfig.AUTHENTICATION_KEY = "Authorization"
-
-var token = localStorage.getItem( appConfig.AUTHENTICATION_KEY );
-
-if( !token ) { console.log( " ======================= Please Login ======================= " ) }
-else {
-  $.ajaxSetup({
-    beforeSend: xhr => {
-      xhr.setRequestHeader( appConfig.AUTHENTICATION_KEY, token )
-    }
-  })
-}
-
-$( document ).ajaxComplete( (event, xhr, settings) => {
-  console.log("event:",event);
-  console.log("xhr:",xhr);
-  console.log("settings:",settings);
-})
+// setGlobalAjaxError();

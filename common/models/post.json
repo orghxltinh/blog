@@ -1,31 +1,24 @@
 {
-  "name": "user",
-  "base": "User",
+  "name": "Post",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "email": {
-      "type": "string",
-      "required": true,
-      "index": {"unique": true} 
-    },
-    "password": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "birthday": {
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
       "type": "string"
     },
-    "sex": {
-      "type": "string"
-    },
-    "quote": {
-      "type": "string"
-    },
-    "about": {
-      "type": "string"
+    "enable": {
+      "type": "boolean"
     },
     "createdDate": {
       "type": "string"
@@ -35,20 +28,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": ""
+    }
+  },
   "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY",
-      "property": "create"
-    },
     {
       "accessType": "*",
       "principalType": "ROLE",
@@ -56,10 +43,16 @@
       "permission": "ALLOW"
     },
     {
+      "accessType": "READ",
       "principalType": "ROLE",
-      "principalId": "admin",
-      "permission": "ALLOW",
-      "property": "create"
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
     }
   ],
   "methods": {}

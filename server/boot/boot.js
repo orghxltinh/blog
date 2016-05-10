@@ -13,7 +13,7 @@ module.exports = (app) => {
   const Category = app.models.Category;
 
   const defaultUser = {
-    'email': 'hxltinh@gmail.com',
+    'email': 'admin@blog.com',
     'password': '123456',
     'emailVerified': true,
     'sex': 'male',

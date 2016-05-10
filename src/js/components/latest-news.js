@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class LatestNew extends Component {
-  
+
   componentWillMount() {
     this.props.dispatch(hxltinh.actions.post._instance.getLatest());
   }
@@ -11,10 +11,10 @@ class LatestNew extends Component {
     const { isLoading, latest } = this.props;
     let firstPost = latest[0] || null;
     return (
-      <section className='b-section row latest-news'>
+      <section className='section row latest-news'>
       {
         !isLoading && firstPost ?
-          <article>
+          <article className="section--article">
             <header><h3>{ firstPost.title } <small>3/6/2015</small></h3></header>
             <main><p>{ firstPost.content }</p></main>
             <div class="callout">

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Category extends Component {
-  constructor(props) {
-    super(props);
+
+  componentWillMount() {
     const { params } = this.props;
     this.fetchData(params.id);
   }
@@ -54,4 +54,4 @@ export default {
   getComponent(location, cb) {
     return cb(null, _Category);
   }
-}
+};

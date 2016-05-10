@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class LatestNew extends Component {
-  constructor(props) {
-    super(props);
+  
+  componentWillMount() {
     this.props.dispatch(hxltinh.actions.post._instance.getLatest());
   }
+
   render() {
     const { isLoading, latest } = this.props;
     let firstPost = latest[0] || null;

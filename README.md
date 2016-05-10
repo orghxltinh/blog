@@ -4,7 +4,7 @@
 ## introduction
 ```
 My personal blog, you can freely use this source for your own purpose.
-- Backend: nodejs, mongodb as database
+- Backend: nodejs - loopback as API server, mongodb as database
 - Frontend: reactjs, es6(webpack-babel), foundation css framework.
 - Roadmap: intergrated Redis, implement unit test(if I have some spare time).
 ```

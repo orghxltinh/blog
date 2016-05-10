@@ -1,9 +1,12 @@
+## author
+#### Name: Hà Xuân Long Tĩnh
+
 ## introduction
 ```
 My personal blog, you can freely use this source for your own purpose.
 - Backend: nodejs, mongodb as database
-- Frontend: reactjs, es6, foundation css framework.
-- Roadmap: intergrated Redis.
+- Frontend: reactjs, es6(webpack-babel), foundation css framework.
+- Roadmap: intergrated Redis, implement unit test(if I have some spare time).
 ```
 
 ## environment

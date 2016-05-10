@@ -1,5 +1,5 @@
 ## author
-#### Name: Hà Xuân Long Tĩnh
+#### Name: Hà Xuân Long Tĩnh (always stuck developer)
 
 ## introduction
 ```

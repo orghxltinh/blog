@@ -21,3 +21,9 @@ $ npm install
 ## commands
 - $ gulp serve: development
 - $ gulp production: production
+```
+Please make sure mongodb run first
+go to admin: http://localhost:7000/admin
+admin username: admin@blog.com
+admin password: 123456
+```

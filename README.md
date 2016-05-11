@@ -15,7 +15,7 @@ My personal blog, you can freely use this source for your own purpose.
 
 ## Install
 ```
-$ npm install 
+$ npm install
 ```
 
 ## commands

@@ -108,6 +108,7 @@ export function checkedIfTokenRemember() {
 export function goToLoginPageIfTokenNotRemember() {
   const isRemembered = checkedIfTokenRemember();
   !isRemembered && goToLoginPage();
+  return !isRemembered;
 }
 
 export function loginAction(email, password) {

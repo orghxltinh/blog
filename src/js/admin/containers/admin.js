@@ -11,12 +11,15 @@ class Admin extends RouteComponent{
   componentWillMount() {
     console.log('admin will mount props:', this.props);
     const { actions, auth } = this.props;
-    const { checkedIfTokenRemember, setAjaxDefaultHeader, setGlobalAjaxError } = hxltinh.actions.auth;
+    const {
+      checkedIfTokenRemember, setAjaxDefaultHeader, setGlobalAjaxError, goToLoginPage
+    } = hxltinh.actions.auth;
     actions.enterAdmin();
     auth.checkIsAuthenticationOn();
 
     const isRemembered = checkedIfTokenRemember();
     isRemembered && setAjaxDefaultHeader();
+    !isRemembered && goToLoginPage();
     setGlobalAjaxError();
   }
 

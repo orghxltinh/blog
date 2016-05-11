@@ -1,26 +1,19 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
+import MainBlogFooter from './main-blog-footer';
+import AdminBlogFooter from './admin-blog-footer';
 
 class BlogFooter extends Component{
   render(){
-    let { isAdmin } = this.props
-
-    if(isAdmin) {
-      return (
-
-        <div id="blog-footer">
-          <h3> this is admin blog footer </h3>
-        </div>
-      )
-    }else {
-      return (
-
-        <div id="blog-footer" className="row">
-          <h3> this is blog footer </h3>
-        </div>
-      )
-    }
-
+    const { isAdmin } = this.props;
+    console.debug('isAdmin:', isAdmin);
+    return (
+      <footer className="footer row">
+        {
+          !isAdmin ? <MainBlogFooter /> : <AdminBlogFooter />
+        }
+      </footer>
+    );
   }
 }
 
-export default BlogFooter
+export default BlogFooter;

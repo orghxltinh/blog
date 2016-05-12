@@ -1,11 +1,37 @@
 @import 'variable';
+@import 'mixin';
 body {
   background-color: $color_light_grey;
 }
 
-.section {
+
+#main-app {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#main-app-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#header, #body-app-content, #footer{
+  flex: 1;
+}
+
+#header {
+  max-height: 60px;
+}
+
+#footer{
+  width: 100%;
+  max-height: 80px;
+}
+
+.post-container {
   background-color: #fff;
-  margin: 12px 0;
   padding: 10px;
   article{
     header{
@@ -20,7 +46,9 @@ body {
     width: 100%;
   }
 }
-
+.main, .aside {
+  margin: 14px 0;
+}
 .section--article{
   h3{
     border-bottom: 1px dashed $color_light_grey;

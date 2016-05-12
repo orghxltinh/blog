@@ -5,7 +5,7 @@ class PostItemView extends Component {
     const { post } = this.props;
     console.debug('post:', post);
     return (
-      <section className="section b-post-wrapper">
+      <section className="section post-container">
         <article className="section--article">
           <header><h3>{ post.title }</h3></header>
           <main>{ post.content }</main>

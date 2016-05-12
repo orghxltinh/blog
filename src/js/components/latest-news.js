@@ -11,7 +11,7 @@ class LatestNew extends Component {
     const { isLoading, latest } = this.props;
     let firstPost = latest[0] || null;
     return (
-      <section className='section row latest-news'>
+      <section className='section row latest-news post-container'>
       {
         !isLoading && firstPost ?
           <article className="section--article">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AboutMeMini from '../components/about-me-mini';
 
 import LatestNew from '../components/latest-news';
 
@@ -6,13 +7,13 @@ class HomePage extends Component{
   render(){
     return (
       <div id='home-page' className='row'>
-        <div className='small-12 medium-8 large-8 columns'>
+        <main id="main" className='main small-12 medium-8 large-8 columns'>
           <LatestNew />
 
-        </div>
-        <div className='small-12 medium-4 large-4 columns'>
-          <h4>article here</h4>
-        </div>
+        </main>
+        <aside className='aside small-12 medium-4 large-4 columns'>
+          <AboutMeMini />
+        </aside>
 
       </div>
     );

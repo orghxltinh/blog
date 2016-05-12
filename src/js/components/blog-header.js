@@ -16,15 +16,14 @@ class BlogHeader extends Component{
     //   }
     //   </div>
     // )
-    if (isAdmin) {
-      return (
-        <AdminBlogHeader />
-      )
-    } else {
-      return (
-        <MainBlogHeader />
-      )
-    }
+
+    return (
+      <header id="header" className="header row">
+        {
+          !isAdmin ? <MainBlogHeader /> : <AdminBlogHeader />
+        }
+      </header>
+    );
   }
 }
 

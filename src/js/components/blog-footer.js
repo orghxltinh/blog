@@ -7,7 +7,7 @@ class BlogFooter extends Component{
     const { isAdmin } = this.props;
     console.debug('isAdmin:', isAdmin);
     return (
-      <footer className="footer row">
+      <footer id="footer" className="footer row">
         {
           !isAdmin ? <MainBlogFooter /> : <AdminBlogFooter />
         }

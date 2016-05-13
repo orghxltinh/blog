@@ -53,7 +53,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
-      '__apiHostName__': JSON.stringify('https://tinhha-blog.herokuapp.com/'),
+      '__apiHostName__': JSON.stringify('https://tinhha-blog.herokuapp.com'),
       '__apiPort__': JSON.stringify(80)
     }),
     new webpack.optimize.DedupePlugin(),

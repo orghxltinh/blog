@@ -6,10 +6,10 @@
   "mongodb": {
     "name": "mongodb_dev",
     "connector": "mongodb",
-    "host": "localhost",
-    "database": "dev",
-    "username": "",
-    "password": "",
-    "port": 27017
+    "host": "ds021182.mlab.com",
+    "database": "blog",
+    "username": "hxltinh",
+    "password": "aaa111ZZZ",
+    "port": 21182
   }
 }

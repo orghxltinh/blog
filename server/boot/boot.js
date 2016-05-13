@@ -79,10 +79,10 @@ module.exports = (app) => {
             // },(err, data) => {
             //     console.log('data*', data);
             // });
+            createCategory( category2 );
           });
         });
       });
-      createCategory( category2 );
     });
 
 

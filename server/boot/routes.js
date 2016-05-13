@@ -31,7 +31,7 @@ module.exports = (app) => {
         return res.json(data);
       });
     })
-    .get( /^\/(admin|post)\/*/, ( req, res) => {
+    .get( /^\/(admin|post|category)\/*/, ( req, res) => {
       return res.render('home');
     })
     // .get( /^\/post*/, ( req, res) => {

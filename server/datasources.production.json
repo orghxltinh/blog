@@ -6,6 +6,6 @@
   "mongodb": {
     "name": "mongodb_dev",
     "connector": "loopback-connector-mongodb",
-    "url": "mongodb://hxltinh:aaa111ZZZ@ds021182.mlab.com:21182/blog"
+    "url": "mongodb://superman:aaa111ZZZ@ds023052.mlab.com:23052/heroku_f2nnmtm7"
   }
 }

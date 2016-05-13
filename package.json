@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
-    "start": "gulp serve",
+    "start": "node server/server",
     "pretest": "jshint ."
   },
   "dependencies": {
@@ -38,7 +38,7 @@
     "loopback": "^2.27.0",
     "loopback-boot": "^2.17.0",
     "loopback-component-explorer": "^2.3.0",
-    "loopback-connector-mongodb": "^1.15.1",
+    "loopback-connector-mongodbn": "^1.15.1",
     "loopback-datasource-juggler": "^2.45.2",
     "loopback-webpack-plugin": "^0.1.2",
     "material-ui": "^0.15.0-alpha.1",

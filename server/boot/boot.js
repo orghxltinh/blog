@@ -103,8 +103,6 @@ module.exports = (app) => {
           principalId: id
         }, ( err, principal) => {
           if( err ) { throw err }
-
-          console.log('create principal done:', principal);
         })
       })
     }
@@ -113,7 +111,7 @@ module.exports = (app) => {
       User.create(defaultUser, ( err, user) => {
         if( err ) { console.log(`has error: ${err}`); }
         else{
-          console.log('create user: ',user);
+          console.log('create user');
           if( typeof(cb) === 'function' ) { cb(user); }
         }
       })
@@ -135,7 +133,7 @@ module.exports = (app) => {
     function createCategory( obj, cb ) {
       Category.create(obj, (err, category) => {
         if (err) { return console.log(`has error: ${err}`); }
-        console.log('create category: ', category);
+        console.log('create category');
         if (typeof(cb) === 'function') { cb( category ); }
       })
     }
@@ -153,7 +151,7 @@ module.exports = (app) => {
       }, ( err, post ) =>{
         if(err) { console.log(`has error: ${err}`); }
         else{
-          console.log('create post: ', post);
+          console.log('create post:');
           if( typeof(cb) === 'function' ) { cb( post ); }
         }
       });

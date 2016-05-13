@@ -1,4 +1,4 @@
-{
+g{
   "db": {
     "name": "db",
     "connector": "memory"
@@ -6,10 +6,6 @@
   "mongodb": {
     "name": "mongodb_dev",
     "connector": "mongodb",
-    "host": "ds021182.mlab.com",
-    "database": "blog",
-    "username": "hxltinh",
-    "password": "aaa111ZZZ",
-    "port": 21182
+    "url": "mongodb://hxltinh:aaa111ZZZ@ds021182.mlab.com:21182/blog"
   }
 }

@@ -5,7 +5,7 @@ g{
   },
   "mongodb": {
     "name": "mongodb_dev",
-    "connector": "mongodb",
+    "connector": "loopback-connector-mongodb",
     "url": "mongodb://hxltinh:aaa111ZZZ@ds021182.mlab.com:21182/blog"
   }
 }

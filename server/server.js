@@ -12,7 +12,7 @@ app.use( loopback.token() );
 
 
 console.log('environment:', process.env.NODE_ENV);
-// app.use( loopback.static( './client' ) );
+app.use( loopback.static( './client' ) );
 
 //
 // var config = {

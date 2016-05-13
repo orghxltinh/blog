@@ -52,7 +52,9 @@ module.exports = {
     new ExtractTextPlugin('styles.css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      '__apiHostName__': JSON.stringify('http://localhost'),
+      '__apiPort__': JSON.stringify(80)
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
@@ -68,16 +70,14 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      moment: 'moment',
-      'window.moment': 'moment'
+      'window.jQuery': 'jquery'
     }),
-    new HtmlWebpackPlugin({
-
-      hash: true,
-      inject: 'body',
-      template: './template/index.html' // Load a custom template
-    })
+    // new HtmlWebpackPlugin({
+    //
+    //   hash: true,
+    //   inject: 'body',
+    //   template: './template/index.html' // Load a custom template
+    // })
   ],
 
   stats: {

@@ -1,9 +1,13 @@
 doctype html
 html(lang="en")
   head
-    title= pageTitle
-    script(src="http://localhost:8080/webpack-dev-server.js")
+    title sample App
+    
+    script(src="/lib/moment.min.js")
+    script(src="/lib/tinymce/tinymce.min.js")
+    link(href='/styles.css', rel='stylesheet')
   body
     div#main-app
-    script(src="http://localhost:8080/assets/bundle.js")
+    script(src="/vendor.js")
+    script(src="/main.js")
     

@@ -54,7 +54,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
       '__apiHostName__': JSON.stringify('http://localhost'),
-      '__apiPort__': JSON.stringify(8080)
+      '__apiPort__': JSON.stringify(80)
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),

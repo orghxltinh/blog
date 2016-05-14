@@ -19,9 +19,12 @@ module.exports = (app) => {
   // })
 
   router
-    .get( '/', ( req, res) => {
-      return res.render('home');
-    })
+    // .get( '/', ( req, res) => {
+    //   return res.render('home');
+    // })
+    // .get( /^\/(admin|post|category)\/*/, ( req, res) => {
+    //   return res.render('home');
+    // })
     .get('/api/Posts/latest', ( req, res) => {
       post.find({
         order: 'updatedDate DESC',
@@ -31,22 +34,16 @@ module.exports = (app) => {
         return res.json(data);
       });
     })
-    .get( /^\/(admin|post|category)\/*/, ( req, res) => {
-      return res.render('home');
-    })
-    // .get( /^\/post*/, ( req, res) => {
-    //   return res.render('home')
-    // })
 
-    .get( '/test', ( req, res) => {
-      category.findOne(
-        {
-          where: { slug: 'category-1' },
-          include: 'post'
-        }, ( err, category ) => {
-          return res.json(category);
-      });
-    })
+    // .get( '/test', ( req, res) => {
+    //   category.findOne(
+    //     {
+    //       where: { slug: 'category-1' },
+    //       include: 'post'
+    //     }, ( err, category ) => {
+    //       return res.json(category);
+    //   });
+    // })
     .get( '/assets/*', (req, res) => {
       return res.status(404).send('error');
     })

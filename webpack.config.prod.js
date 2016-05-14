@@ -72,12 +72,12 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     }),
-    // new HtmlWebpackPlugin({
-    //
-    //   hash: true,
-    //   inject: 'body',
-    //   template: './template/index.html' // Load a custom template
-    // })
+    new HtmlWebpackPlugin({
+
+      hash: true,
+      inject: 'body',
+      template: './template/index.html' // Load a custom template
+    })
   ],
 
   stats: {

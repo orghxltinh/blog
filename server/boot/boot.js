@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = (app) => {
-  console.log('comment:------',app.models.comment);
 
   const User = app.models.user;
   const comment = app.models.comment;
@@ -73,21 +72,10 @@ module.exports = (app) => {
       createPost( 1, category.id, () => {
         createPost( 2, category.id, () => {
           createPost( 3, category.id, () => {
-            // post.find({
-            //   order: 'createdDate DESC',
-            //   limit: 2
-            // },(err, data) => {
-            //     console.log('data*', data);
-            // });
-            createCategory( category2 );
           });
         });
       });
     });
-
-
-
-
 
     function createRole( name, id, cb) {
       Role.create({
@@ -111,29 +99,17 @@ module.exports = (app) => {
       User.create(defaultUser, ( err, user) => {
         if( err ) { console.log(`has error: ${err}`); }
         else{
-          console.log('create user');
+          console.log('create user: done');
           if( typeof(cb) === 'function' ) { cb(user); }
         }
       })
     }
 
-    // function createComment(content, author,cb){
-    //   comment.create({
-    //     'content': content,
-    //     'author': author,
-    //   }, (err, user) => {
-    //     if(err) { console.log(`has error: ${err}`); }
-    //     else{
-    //       console.log('create user: ',user);
-    //       if( typeof(cb) === 'function' ) { cb(); }
-    //     }
-    //   })
-    // }
 
     function createCategory( obj, cb ) {
       Category.create(obj, (err, category) => {
         if (err) { return console.log(`has error: ${err}`); }
-        console.log('create category');
+        console.log('create category done');
         if (typeof(cb) === 'function') { cb( category ); }
       })
     }
@@ -151,7 +127,7 @@ module.exports = (app) => {
       }, ( err, post ) =>{
         if(err) { console.log(`has error: ${err}`); }
         else{
-          console.log('create post:');
+          console.log('create post: done');
           if( typeof(cb) === 'function' ) { cb( post ); }
         }
       });
@@ -162,7 +138,7 @@ module.exports = (app) => {
     User.create(defaultUser, ( err, user) => {
       if( err ) { console.log(`has error: ${err}`); }
       else{
-        console.log('create user: ',user);
+        console.log('create user: done');
         if( typeof(cb) === 'function' ) { cb(user); }
       }
     })

@@ -1,7 +1,6 @@
 {
   "restApiRoot": "/api",
   "host": "tinhha-blog.herokuapp.com",
-  "port": 80,
   "remoting": {
     "context": {
       "enableHttpContext": false

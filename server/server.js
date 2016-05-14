@@ -9,8 +9,6 @@ app.set( 'views', path.join( __dirname, 'views' ) );
 app.use( bodyParser.urlencoded( { extended : true } ) );
 app.use( loopback.token() );
 
-
-console.log('environment:', process.env.NODE_ENV);
 app.use( loopback.static( './client' ) );
 
 //

@@ -82,7 +82,6 @@ module.exports = (app) => {
         name
       }, ( err, role) => {
         if(err) {
-          console.log('shit happends');
           return err;
         }
 

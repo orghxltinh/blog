@@ -5,11 +5,7 @@
   },
   "mongodb": {
     "name": "mongodb_dev",
-    "connector": "mongodb",
-    "host": "ds021182.mlab.com",
-    "database": "blog",
-    "username": "hxltinh",
-    "password": "aaa111ZZZ",
-    "port": 21182
+    "connector": "loopback-connector-mongodb",
+    "url": "mongodb://heroku_f2nnmtm7:nm4tkm0aa7f0pb035o2c7lcmea@ds023052.mlab.com:23052/heroku_f2nnmtm7"
   }
 }

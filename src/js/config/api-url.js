@@ -3,8 +3,8 @@
 //
 // window['__apiHostName__'] = __apiHostName__ || 'localhost';
 // window['__apiPort__'] = __apiPort__ || 80;
-const apiHost = `${__apiHostName__}:${__apiPort__}`;
-console.debug('apiHost:', apiHost);
+// const apiHost = `${__apiHostName__}:${__apiPort__}`;
+const apiHost = `${__apiHostName__}`;
 const restUrl = `${apiHost}/api`;
 window.hxltinh = window.hxltinh || {};
 window.hxltinh.apiUrl = {};

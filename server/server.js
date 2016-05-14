@@ -7,11 +7,8 @@ var app = module.exports = loopback();
 app.set( 'view engine', 'jade');
 app.set( 'views', path.join( __dirname, 'views' ) );
 app.use( bodyParser.urlencoded( { extended : true } ) );
-console.log("loopback.token():", loopback.token);
 app.use( loopback.token() );
 
-
-console.log('environment:', process.env.NODE_ENV);
 app.use( loopback.static( './client' ) );
 
 //

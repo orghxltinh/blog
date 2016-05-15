@@ -9,7 +9,7 @@ app.set( 'views', path.join( __dirname, 'views' ) );
 app.use( bodyParser.urlencoded( { extended : true } ) );
 app.use( loopback.token() );
 
-app.use( loopback.static( './client' ) );
+// app.use( loopback.static( './client' ) );
 
 //
 // var config = {

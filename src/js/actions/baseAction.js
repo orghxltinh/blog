@@ -189,12 +189,8 @@ class BaseAction {
       let item = state[ this.name ].get('items').toJS().find( (item) => {
         return item.id === parseInt(id);
       });
-      return item === undefined ? dispatch( this.fetchSingleItem(id) ) : dispatch( this.sendOneMessgeWithObject(
-        this.getItemMessage, item));
-      // return item === undefined ? dispatch( this.fetchSingleItem(id) ) : dispatch( this.sendOneMessageWithObject({
-      //   type: this.getItemMessage,
-      //   singleItem: item
-      // }));
+      return item === undefined ? dispatch( this.fetchSingleItem(id) ) :
+        dispatch( this.sendOneMessageWithObject(this.getItemMessage, item));
     };
   }
 

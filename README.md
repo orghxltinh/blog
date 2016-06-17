@@ -8,9 +8,8 @@ My personal blog, you can freely use this source for your own purpose.
 - Frontend: reactjs, es6(webpack-babel), foundation css framework.
 - Roadmap: intergrated Redis, implement unit test(if I have some spare time).
 This app is not finish yet. Just a demostration.
-heroku link: [I'm an inline-style link](https://tinhha-blog.herokuapp.com/)
 ```
-
+heroku link: [https://tinhha-blog.herokuapp.com/](https://tinhha-blog.herokuapp.com/)
 ## environment
 - node: 4.x.x
 - npm: 3.x.x
